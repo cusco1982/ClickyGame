@@ -10,11 +10,20 @@ class App extends Component {
     friends
   };
 
-  removeFriend = id => {
-    // Filter this.state.friends for friends with an id not equal to the id being removed
-    const friends = this.state.friends.filter(friend => friend.id !== id);
-    // Set this.state.friends equal to the new friends array
-    this.setState({ friends });
+  // removeFriend = id => {
+  //   // Filter this.state.friends for friends with an id not equal to the id being removed
+  //   const friends = this.state.friends.filter(friend => friend.id !== id);
+  //   // Set this.state.friends equal to the new friends array
+  //   this.setState({ friends });
+  // };
+
+  handleClick = id => {
+    if (this.state.clicked.indexOf(id) === -1) {
+      this.handleIncrement();
+      this.setState({ clicked: this.state.clicked.concat(id) });
+    } else {
+      this.handleReset();
+    }
   };
 
   // Map over this.state.friends and render a FriendCard component for each friend object
@@ -24,7 +33,8 @@ class App extends Component {
         <Title>Friends List</Title>
         {this.state.friends.map(friend => (
           <FriendCard
-            removeFriend={this.removeFriend}
+            // removeFriend={this.removeFriend}
+            removeFriend={this.handleClick}
             id={friend.id}
             key={friend.id}
             name={friend.name}
