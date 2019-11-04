@@ -54,7 +54,8 @@ class App extends Component {
 
   resetGame = () => {
     this.setState({
-      clicked: []
+      clicked: [],
+      score: 0
     });
   };
 
@@ -66,9 +67,9 @@ class App extends Component {
       console.log("clicked:,", id);
       
       this.setState({ clicked: this.state.clicked.concat(id) });
-      console.log(this.state.clicked);
     } else {
       this.resetGame();
+      console.log("game over, try again")
       console.log(this.state.clicked);
     }
   };
