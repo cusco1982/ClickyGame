@@ -11,9 +11,8 @@ class App extends Component {
   // Setting this.state.friends to the friends json array
   state = {
     friends: friends,
-    clicked: friends.clicked
-      // id1: friends.clicked
-    // }
+    // clicked: friends.clicked
+    clicked: []
   };
 
   // removeFriend = id => {
@@ -25,22 +24,22 @@ class App extends Component {
 
 
 
+// // try to fix later
 
+//   handleClick = (id, clicked) => {
 
-  handleClick = (id, clicked) => {
-
-    if (clicked === false) {
-      friends.forEach((friend, index) => {
-        if (id === friend.id) {
-          console.log(friend.clicked)
-          console.log(this.state.clicked)
-          // this.setState{ (friends.clicked: true)
-        }
-      })
-    } else {
-      console.log("already clicked");
-    }
-  };
+//     if (clicked === false) {
+//       friends.forEach((friend, index) => {
+//         if (id === friend.id) {
+//           console.log(friend.clicked)
+//           console.log(this.state.clicked)
+//           // this.setState{ (friends.clicked: true)
+//         }
+//       })
+//     } else {
+//       console.log("already clicked");
+//     }
+//   };
 
 
   // if (this.state.clicked.indexOf(id) === -1) {
