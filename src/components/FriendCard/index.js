@@ -36,6 +36,15 @@ function FriendCard(props) {
 
 export default FriendCard;
 
+const FriendCard = props => (
+  <div className="card" value={props.id} onClick={() => props.handleClick(props.id,props.clicked)}>
+     
+      <div className="img-container">
+          <img alt={props.name} src={props.image} />
+      </div>
+  </div>
+);
+
 
 
 
