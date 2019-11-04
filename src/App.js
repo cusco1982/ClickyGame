@@ -109,7 +109,7 @@ class App extends Component {
         />
 
 
-        <Title>Clicky Game! Try to click every icon without repition!</Title>
+        <Title>Clicky Game! Try to click every icon without repitition!</Title>
         {this.state.friends.map(friend => (
           <FriendCard
             // removeFriend={this.removeFriend}
