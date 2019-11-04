@@ -3,7 +3,7 @@ import "./style.css";
 
 function FriendCard(props) {
   return (
-    <div className="card" value={props.id}>
+    <div className="card" id={props.id} onClick={()=>props.removeFriend(props.id)}>
 
       <div className="img-container">
         <img alt={props.name} src={props.image} />
