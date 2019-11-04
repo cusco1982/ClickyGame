@@ -67,7 +67,7 @@ class App extends Component {
       score: newScore,
       errmsg: ""
     });
-    console.log("shuffle cards");
+    console.log("shuffleCards()");
     if (newScore >= this.state.topScore) {
       this.setState({ topScore: newScore });
 
@@ -104,7 +104,7 @@ class App extends Component {
         <Nav
           title="Clicky Game"
           errmsg={this.state.errmsg}
-          score={this.state.currentScore}
+          score={this.state.score}
           topScore={this.state.topScore}
         />
 
