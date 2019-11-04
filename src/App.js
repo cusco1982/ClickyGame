@@ -23,9 +23,9 @@ class App extends Component {
 
   handleClick = (id, clicked) => {
     
-    // if (clicked === false) {
+    if (clicked === false) {
       console.log("hello");
-    // }
+    }
   };
 
 
