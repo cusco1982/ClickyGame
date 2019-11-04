@@ -67,7 +67,7 @@ class App extends Component {
       console.log("increaseScore()");
       console.log("check/updateTopScore()");
 
-      console.log("clicked:,", id);
+      console.log("clicked:", id);
       
       this.setState({ clicked: this.state.clicked.concat(id) });
     } else {
