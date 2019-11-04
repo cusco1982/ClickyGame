@@ -20,14 +20,23 @@ class App extends Component {
     this.setState({ friends });
   };
 
-  // handleClick = id => {
-  //   if (this.state.clicked.indexOf(id) === -1) {
-  //     this.handleIncrement();
-  //     this.setState({ clicked: this.state.clicked.concat(id) });
-  //   } else {
-  //     this.handleReset();
-  //   }
+
+  handleClick = id => {
+    if (this.state.clicked.indexOf(id) === -1) {
+      // this.handleIncrement();
+      this.setState({ clicked: this.state.clicked.concat(id) });
+    // } else {
+      // this.handleReset();
+    }
+  };
+
+
+  // handleShuffle = () => {
+  //   let shuffledFriends = shuffleFriends(friends);
+  //   this.setState({ friends: shuffledFriends });
   // };
+
+
 
   // Map over this.state.friends and render a FriendCard component for each friend object
   render() {
@@ -35,7 +44,7 @@ class App extends Component {
       <Wrapper>
 
         <Nav
-          title="Futurama Clicky Game"
+          title="Clicky Game"
           score={this.state.currentScore}
           topScore={this.state.topScore}
           rightWrong={this.state.rightWrong}
@@ -47,12 +56,12 @@ class App extends Component {
           <FriendCard
             removeFriend={this.removeFriend}
             // removeFriend={this.handleClick}
-            id={friend.id}
             key={friend.id}
-            name={friend.name}
+            id={friend.id}
             image={friend.image}
-            occupation={friend.occupation}
             location={friend.location}
+            name={friend.name}
+            occupation={friend.occupation}
           />
         ))}
       </Wrapper>

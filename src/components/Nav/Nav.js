@@ -11,10 +11,10 @@ const Nav = props => (
 
             {/* <li id="rw">{props.rightWrong}</li> */}
 
-            <li //id="cur-sco"
+            <li id="nav-score"
             >Score: {props.score}</li>
 
-            <li //id="top-sco"
+            <li id="nav-top score"
             >Top Score: {props.topScore}</li>
         </ul>
     </nav>
