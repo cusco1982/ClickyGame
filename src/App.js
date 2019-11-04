@@ -10,7 +10,10 @@ import Nav from "./components/Nav";
 class App extends Component {
   // Setting this.state.friends to the friends json array
   state = {
-    friends
+    friends: friends,
+    clicked: friends.clicked
+      // id1: friends.clicked
+    // }
   };
 
   // removeFriend = id => {
@@ -18,7 +21,10 @@ class App extends Component {
   //   const friends = this.state.friends.filter(friend => friend.id !== id);
   //   // Set this.state.friends equal to the new friends array
   //   this.setState({ friends });
-  // };
+  // };     
+
+
+
 
 
   handleClick = (id, clicked) => {
@@ -26,23 +32,15 @@ class App extends Component {
     if (clicked === false) {
       friends.forEach((friend, index) => {
         if (id === friend.id) {
-          // console.log(id)
-          console.log(friend)
+          console.log(friend.clicked)
+          console.log(this.state.clicked)
+          // this.setState{ (friends.clicked: true)
         }
-
-        // console.log(friend.id);
-        // // console.log(index);
-        // console.log("clicked id:",id)
       })
-    }else {
+    } else {
       console.log("already clicked");
     }
   };
-
-  //   yourArray.forEach(function (arrayItem) {
-  //     var x = arrayItem.prop1 + 2;
-  //     console.log(x);
-  // });
 
 
   // if (this.state.clicked.indexOf(id) === -1) {
