@@ -12,7 +12,9 @@ class App extends Component {
   state = {
     friends: friends,
     // clicked: friends.clicked
-    clicked: []
+    clicked: [],
+    score: 0,
+    topScore:0
   };
 
   // removeFriend = id => {
