@@ -22,20 +22,27 @@ class App extends Component {
 
 
   handleClick = (id, clicked) => {
-    
-    if (clicked === false) {
-      friends.forEach( (friend) => {
-        console.log(friend);
-        // console.log(index);
 
+    if (clicked === false) {
+      friends.forEach((friend, index) => {
+        if (id === friend.id) {
+          // console.log(id)
+          console.log(friend)
+        }
+
+        // console.log(friend.id);
+        // // console.log(index);
+        // console.log("clicked id:",id)
       })
+    }else {
+      console.log("already clicked");
     }
   };
 
-//   yourArray.forEach(function (arrayItem) {
-//     var x = arrayItem.prop1 + 2;
-//     console.log(x);
-// });
+  //   yourArray.forEach(function (arrayItem) {
+  //     var x = arrayItem.prop1 + 2;
+  //     console.log(x);
+  // });
 
 
   // if (this.state.clicked.indexOf(id) === -1) {
