@@ -56,12 +56,14 @@ class App extends Component {
           <FriendCard
             removeFriend={this.removeFriend}
             // removeFriend={this.handleClick}
+
             key={friend.id}
             id={friend.id}
             image={friend.image}
             location={friend.location}
             name={friend.name}
             occupation={friend.occupation}
+            clicked={friend.clicked}
           />
         ))}
       </Wrapper>
