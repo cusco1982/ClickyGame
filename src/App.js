@@ -52,16 +52,27 @@ class App extends Component {
   // }
   // };
 
+  resetGame = () => {
+    this.setState({
+      clicked: []
+    });
+  };
 
   handleClick = id => {
     if (this.state.clicked.indexOf(id) === -1) {
-      // this.handleIncrement();
+      console.log("increaseScore()");
+      console.log("check/updateTopScore()");
+
+      console.log("clicked:,", id);
+      
       this.setState({ clicked: this.state.clicked.concat(id) });
-      console.log("clicked:,", id)
+      console.log(this.state.clicked);
     } else {
-      console.log("already clicked!");
+      this.resetGame();
+      console.log(this.state.clicked);
     }
   };
+
 
 
 
@@ -75,7 +86,6 @@ class App extends Component {
           title="Clicky Game"
           score={this.state.currentScore}
           topScore={this.state.topScore}
-          rightWrong={this.state.rightWrong}
         />
 
 
@@ -84,6 +94,7 @@ class App extends Component {
           <FriendCard
             // removeFriend={this.removeFriend}
             handleClick={this.handleClick}
+            resetGame={this.resetGame}
 
             key={friend.id}
             id={friend.id}
