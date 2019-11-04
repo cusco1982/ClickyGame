@@ -12,7 +12,7 @@ class App extends Component {
   state = {
     friends: friends,
     // clicked: friends.clicked
-    errmsg:"",
+    errmsg: "",
     clicked: [],
     score: 0,
     topScore: 0
@@ -60,15 +60,29 @@ class App extends Component {
       errmsg: "game over, try again!"
     });
   };
+  
+  handleScores = () => {
+    const newScore = this.state.score + 1;
+    this.setState({
+      score: newScore,
+      errmsg: ""
+    });
+    console.log("shuffle cards");
+    if (newScore >= this.state.topScore) {
+      this.setState({ topScore: newScore });
+
+    } else if (newScore === 10) {
+      this.setState({ errmsg: "You Win!" });
+    }
+  };
 
   handleClick = id => {
     if (this.state.clicked.indexOf(id) === -1) {
-      this.setState({errmsg:""})
-      console.log("increaseScore()");
-      console.log("check/updateTopScore()");
-
+      // console.log("increaseScore()");
+      // console.log("check/updateTopScore()");
+      this.handleScores();
       console.log("clicked:", id);
-      
+
       this.setState({ clicked: this.state.clicked.concat(id) });
     } else {
       this.resetGame();
@@ -76,6 +90,7 @@ class App extends Component {
       // console.log(this.state.clicked);
     }
   };
+
 
 
 
@@ -100,6 +115,7 @@ class App extends Component {
             // removeFriend={this.removeFriend}
             handleClick={this.handleClick}
             resetGame={this.resetGame}
+            handleScores={this.handleScores}
 
             key={friend.id}
             id={friend.id}
