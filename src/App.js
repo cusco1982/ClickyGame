@@ -21,14 +21,30 @@ class App extends Component {
   };
 
 
-  handleClick = id => {
-    if (this.state.clicked.indexOf(id) === -1) {
-      // this.handleIncrement();
-      this.setState({ clicked: this.state.clicked.concat(id) });
-    // } else {
-      // this.handleReset();
-    }
+  handleClick = (id, clicked) => {
+    
+    // if (clicked === false) {
+      console.log("hello");
+    // }
   };
+
+
+  // if (this.state.clicked.indexOf(id) === -1) {
+  // this.handleIncrement();
+  // this.setState({ clicked: this.state.clicked.concat(id) });
+  // } else {
+  // this.handleReset();
+  // }
+  // };
+
+  // handleClick = id => {
+  //   if (this.state.clicked.indexOf(id) === -1) {
+  //     this.handleIncrement();
+  //     this.setState({ clicked: this.state.clicked.concat(id) });
+  //   } else {
+  //     this.handleReset();
+  //   }
+  // };
 
 
   // handleShuffle = () => {
@@ -54,15 +70,15 @@ class App extends Component {
         <Title>Clicky Game! Try to click every icon without repition!</Title>
         {this.state.friends.map(friend => (
           <FriendCard
-            removeFriend={this.removeFriend}
-            // removeFriend={this.handleClick}
+            // removeFriend={this.removeFriend}
+            handleClick={this.handleClick}
 
             key={friend.id}
             id={friend.id}
             image={friend.image}
-            location={friend.location}
-            name={friend.name}
-            occupation={friend.occupation}
+            // location={friend.location}
+            // name={friend.name}
+            // occupation={friend.occupation}
             clicked={friend.clicked}
           />
         ))}
