@@ -6,6 +6,14 @@ import friends from "./friends.json";
 
 import Nav from "./components/Nav";
 
+function shuffleCards(array){
+  for (let i = array.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  
+  return array;
+}
 
 class App extends Component {
   // Setting this.state.friends to the friends json array
@@ -52,6 +60,7 @@ class App extends Component {
   // this.handleReset();
   // }
   // };
+ 
 
   resetGame = () => {
     this.setState({
@@ -67,21 +76,34 @@ class App extends Component {
       score: newScore,
       errmsg: ""
     });
-    console.log("shuffleCards()");
+    // console.log("shuffleCards()");
     if (newScore >= this.state.topScore) {
       this.setState({ topScore: newScore });
 
-    } else if (newScore === 10) {
-      this.setState({ errmsg: "You Win!" });
+    } if (newScore === 10) {
+      this.setState({ 
+        errmsg: "You Win!" ,
+        score: 0,
+        clicked:[]
+      });
+      console.log(this.state.clicked);
+      // console.log("win")
+      // this.resetGame();
     }
+  };
+
+  shuffleCards = () => {
+    let shuffledCards = shuffleCards(friends);
+    this.setState({ friends: shuffledCards });
   };
 
   handleClick = id => {
     if (this.state.clicked.indexOf(id) === -1) {
       // console.log("increaseScore()");
       // console.log("check/updateTopScore()");
+      this.shuffleCards();
       this.handleScores();
-      console.log("clicked:", id);
+      // console.log("clicked:", id);
 
       this.setState({ clicked: this.state.clicked.concat(id) });
     } else {
@@ -116,6 +138,7 @@ class App extends Component {
             handleClick={this.handleClick}
             resetGame={this.resetGame}
             handleScores={this.handleScores}
+            shuffleCards={this.shuffleCards}
 
             key={friend.id}
             id={friend.id}
