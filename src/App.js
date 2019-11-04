@@ -14,7 +14,7 @@ class App extends Component {
     // clicked: friends.clicked
     clicked: [],
     score: 0,
-    topScore:0
+    topScore: 0
   };
 
   // removeFriend = id => {
@@ -26,22 +26,22 @@ class App extends Component {
 
 
 
-// // try to fix later
+  // // try to fix later
 
-//   handleClick = (id, clicked) => {
+  //   handleClick = (id, clicked) => {
 
-//     if (clicked === false) {
-//       friends.forEach((friend, index) => {
-//         if (id === friend.id) {
-//           console.log(friend.clicked)
-//           console.log(this.state.clicked)
-//           // this.setState{ (friends.clicked: true)
-//         }
-//       })
-//     } else {
-//       console.log("already clicked");
-//     }
-//   };
+  //     if (clicked === false) {
+  //       friends.forEach((friend, index) => {
+  //         if (id === friend.id) {
+  //           console.log(friend.clicked)
+  //           console.log(this.state.clicked)
+  //           // this.setState{ (friends.clicked: true)
+  //         }
+  //       })
+  //     } else {
+  //       console.log("already clicked");
+  //     }
+  //   };
 
 
   // if (this.state.clicked.indexOf(id) === -1) {
@@ -53,14 +53,15 @@ class App extends Component {
   // };
 
 
-  // handleClick = id => {
-  //   if (this.state.clicked.indexOf(id) === -1) {
-  //     this.handleIncrement();
-  //     this.setState({ clicked: this.state.clicked.concat(id) });
-  //   } else {
-  //     this.handleReset();
-  //   }
-  // };
+  handleClick = id => {
+    if (this.state.clicked.indexOf(id) === -1) {
+      // this.handleIncrement();
+      this.setState({ clicked: this.state.clicked.concat(id) });
+      console.log("clicked:,", id)
+    } else {
+      console.log("already clicked!");
+    }
+  };
 
 
 
