@@ -12,6 +12,7 @@ class App extends Component {
   state = {
     friends: friends,
     // clicked: friends.clicked
+    errmsg:"",
     clicked: [],
     score: 0,
     topScore: 0
@@ -55,12 +56,14 @@ class App extends Component {
   resetGame = () => {
     this.setState({
       clicked: [],
-      score: 0
+      score: 0,
+      errmsg: "game over, try again!"
     });
   };
 
   handleClick = id => {
     if (this.state.clicked.indexOf(id) === -1) {
+      this.setState({errmsg:""})
       console.log("increaseScore()");
       console.log("check/updateTopScore()");
 
@@ -69,8 +72,8 @@ class App extends Component {
       this.setState({ clicked: this.state.clicked.concat(id) });
     } else {
       this.resetGame();
-      console.log("game over, try again")
-      console.log(this.state.clicked);
+      // console.log("game over, try again")
+      // console.log(this.state.clicked);
     }
   };
 
@@ -85,6 +88,7 @@ class App extends Component {
 
         <Nav
           title="Clicky Game"
+          errmsg={this.state.errmsg}
           score={this.state.currentScore}
           topScore={this.state.topScore}
         />
