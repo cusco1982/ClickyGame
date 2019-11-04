@@ -13,20 +13,29 @@ class App extends Component {
     friends
   };
 
-  removeFriend = id => {
-    // Filter this.state.friends for friends with an id not equal to the id being removed
-    const friends = this.state.friends.filter(friend => friend.id !== id);
-    // Set this.state.friends equal to the new friends array
-    this.setState({ friends });
-  };
+  // removeFriend = id => {
+  //   // Filter this.state.friends for friends with an id not equal to the id being removed
+  //   const friends = this.state.friends.filter(friend => friend.id !== id);
+  //   // Set this.state.friends equal to the new friends array
+  //   this.setState({ friends });
+  // };
 
 
   handleClick = (id, clicked) => {
     
     if (clicked === false) {
-      console.log("hello");
+      friends.forEach( (friend) => {
+        console.log(friend);
+        // console.log(index);
+
+      })
     }
   };
+
+//   yourArray.forEach(function (arrayItem) {
+//     var x = arrayItem.prop1 + 2;
+//     console.log(x);
+// });
 
 
   // if (this.state.clicked.indexOf(id) === -1) {
@@ -37,6 +46,7 @@ class App extends Component {
   // }
   // };
 
+
   // handleClick = id => {
   //   if (this.state.clicked.indexOf(id) === -1) {
   //     this.handleIncrement();
@@ -46,11 +56,6 @@ class App extends Component {
   //   }
   // };
 
-
-  // handleShuffle = () => {
-  //   let shuffledFriends = shuffleFriends(friends);
-  //   this.setState({ friends: shuffledFriends });
-  // };
 
 
 
